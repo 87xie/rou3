@@ -20,14 +20,11 @@
     "dist"
   ],
   "scripts": {
-    "bench": "node ./benchmark/direct.mjs",
-    "bench:http": "node ./benchmark/http.mjs",
-    "bench:profile": "0x -o -D benchmark/.profile -- node ./benchmark/direct.mjs",
+    "bench": "node ./benchmark/bench.mjs",
     "build": "unbuild",
     "dev": "vitest",
     "lint": "eslint . && prettier -c src tests",
     "lint:fix": "eslint --fix . && prettier -w src tests",
-    "playground": "pnpm jiti ./playground.ts",
     "release": "pnpm test && pnpm build && changelogen --release && git push --follow-tags && npm publish",
     "test": "pnpm lint && pnpm test:types && vitest run",
     "test:types": "tsc --noEmit"
